@@ -82,7 +82,7 @@ if __name__ == "__main__":
     path = get_local_dir(path_to_the_synchronized_folder)
     if path:
         timer = convert_time_to_seconds(interval_between_synchronizations)
-        logger.info(f"Программа синхронизации файлов начинает работу с директорией {path}.")
+        logger.info(f"Программа синхронизации файлов начинает работу с директорией {path}.")       
         while count < 2:
             local_files = detecting_files_in_local_directory(path)
             if not local_files:
