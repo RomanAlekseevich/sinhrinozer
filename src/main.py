@@ -16,7 +16,7 @@ directory_in_cloud_storage = config.get_path_to_cloud_storage()
 interval_between_synchronizations = config.get_time_interval()
 log_file = config.get_log_file()
 
-logger.add(f'{log_file}', format="sinhrinozer {time:YYYY-MM-DD HH:mm:ss,SSS} {level} {message}", rotation='1 MB', compression='zip')
+logger.add(f'{log_file}', format="synchroniser {time:YYYY-MM-DD HH:mm:ss,SSS} {level} {message}", rotation='1 MB', compression='zip')
 
 
 if __name__ == "__main__":
