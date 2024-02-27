@@ -102,7 +102,7 @@ class CheckEnv:
                 headers = {'Content-Type': 'application/json',
                         'Accept': 'application/json', 
                         'Authorization': f'OAuth {self._config["token_yandex_disk"]}'}
-                response = requests.get(f"{url}?path={self._config["path_on_yandex_cloud"]}",
+                response = requests.get(f"{url}?path={self._config['path_on_yandex_cloud']}",
                                         headers=headers)
                 return response
         except Exception as ex:
@@ -124,9 +124,9 @@ class CheckEnv:
             elif response.status_code == 401:
                 raise  ValueError("Ошибка подключения  к Яндекс.Диску. Проверьте правильность введённого токена")
             elif  response.status_code == 404:
-                raise FileNotFoundError(f"Директория {self._config["path_on_yandex_cloud"]} не найдена на Яндекс диске.")
+                raise FileNotFoundError(f"Директория {self._config['path_on_yandex_cloud']} не найдена на Яндекс диске.")
             else:
-                raise ConnectionError(f"{response.json()["message"]}")
+                raise ConnectionError(f"{response.json()['message']}")
         except Exception as ex:
             logger.error(ex)
             sys.exit()
